@@ -1,0 +1,12 @@
+tags:
+  - sql
+  - advanced
+  - jupyter
+  - window functions
+  - CTEs
+
+languages:
+  - sql
+  - python
+
+jupyter_notebook: true

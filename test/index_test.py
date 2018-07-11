@@ -19,13 +19,13 @@ class TestDowJonesIndustrials(unittest.TestCase):
 
 
     def test_profit_margin_cte(self):
-        connection = psycopg2.connect(database="dow_jones.db", host="localhost")
+        connection = psycopg2.connect(database="dow_jones", host="localhost")
         cursor = connection.cursor()
         cursor.execute(profit_margin_cte())
         raw = cursor.fetchall()
 
 
-        result = [('Visa', 68.44), ("McDonald's", 42.59), ('Pfizer', 40.4), ('Verizon', 37.46), ('Microsoft', 35.34), ('Johnson & Johnson', 33.16), ('Merck', 31.73), ('Apple', 30.87), ('Coca-Cola', 30.7), ('Walt Disney', 30.36), ('Cisco Systems', 30.08), ('Procter & Gamble', 27.14), ('American Express', 25.35), ('3M', 25.09), ('IBM', 21.0), ('DowDuPont', 18.6), ('Caterpillar', 18.59), ('Chevron', 17.15), ('United Technologies', 16.78), ('The Home Depot', 16.59), ('Intel', 16.41), ('Nike', 14.48), ('ExxonMobil', 14.1), ('Travelers', 13.44), ('Boeing', 12.98), ('UnitedHealth Group', 8.4), ('Walmart', 6.55), ('General Electric', 4.23)]
+        result = [('Visa', 68.44), ("McDonalds", 42.59), ('Pfizer', 40.4), ('Verizon', 37.46), ('Microsoft', 35.34), ('Johnson & Johnson', 33.16), ('Merck', 31.73), ('Apple', 30.87), ('Coca-Cola', 30.7), ('Walt Disney', 30.36), ('Cisco Systems', 30.08), ('Procter & Gamble', 27.14), ('American Express', 25.35), ('3M', 25.09), ('IBM', 21.0), ('DowDuPont', 18.6), ('Caterpillar', 18.59), ('Chevron', 17.15), ('United Technologies', 16.78), ('The Home Depot', 16.59), ('Intel', 16.41), ('Nike', 14.48), ('ExxonMobil', 14.1), ('Travelers', 13.44), ('Boeing', 12.98), ('UnitedHealth Group', 8.4), ('Walmart', 6.55), ('General Electric', 4.23)]
 
         test = []
         for el in raw:
@@ -35,7 +35,7 @@ class TestDowJonesIndustrials(unittest.TestCase):
 
 
     def test_five_most_levered_capital_structures(self):
-        connection = psycopg2.connect(database="dow_jones.db", host="localhost")
+        connection = psycopg2.connect(database="dow_jones", host="localhost")
         cursor = connection.cursor()
         cursor.execute(five_most_levered_capital_structures())
         raw = cursor.fetchall()
@@ -50,18 +50,19 @@ class TestDowJonesIndustrials(unittest.TestCase):
 
 
     def test_riskier_than_average_cos(self):
-        connection = psycopg2.connect(database="dow_jones.db", host="localhost")
+        connection = psycopg2.connect(database="dow_jones", host="localhost")
         cursor = connection.cursor()
         cursor.execute(riskier_than_average_cos())
 
         test = cursor.fetchall()
-        result = [('GE',), ('MCD',), ('KO',), ('WMT',), ('PG',), ('V',), ('AXP',), ('TRV',), ('CAT',), ('DWDP',), ('CVX',), ('PFE',), ('MRK',), ('IBM',), ('CSCO',)]
+
+        result = [('GE',), ('CVX',), ('MRK',), ('PFE',)]
 
         self.assertEqual(test, result)
 
 
     def test_pharma_cos_with_above_average_roi(self):
-        connection = psycopg2.connect(database="dow_jones.db", host="localhost")
+        connection = psycopg2.connect(database="dow_jones", host="localhost")
         cursor = connection.cursor()
         cursor.execute(pharma_cos_with_above_average_roi())
         raw = cursor.fetchall()

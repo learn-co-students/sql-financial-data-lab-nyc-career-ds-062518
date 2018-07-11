@@ -60,13 +60,13 @@ class TestDowJonesIndustrials(unittest.TestCase):
         self.assertEqual(test, result)
 
 
-    def test_tech_cos_with_above_average_roi(self):
+    def test_pharma_cos_with_above_average_roi(self):
         connection = psycopg2.connect(database="dow_jones.db", host="localhost")
         cursor = connection.cursor()
-        cursor.execute(tech_cos_with_above_average_roi())
+        cursor.execute(pharma_cos_with_above_average_roi())
         raw = cursor.fetchall()
 
-        result = [('Apple', 8.0, 6.95), ('Cisco Systems', 8.3, 6.95), ('IBM', 9.3, 6.95)]
+        result = [('Pfizer', 9.06, 7.76)]
 
         test = []
         for el in raw:

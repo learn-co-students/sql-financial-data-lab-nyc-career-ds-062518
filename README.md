@@ -11,6 +11,20 @@ In this lab we will be calculating financial metrics using data from the constit
 2.  Write Window Functions in conjunction with Common Table Expressions to make more powerful queries
 
 
+## Setting up our database and table
+
+First we must create our `dow_jones` database.  Open up the Postgres app and create a new database with the following command:
+
+> ```sql
+CREATE DATABASE dow_jones;
+```
+
+Now let's create a table populate it with all of the Dow Jones Industrials data.  In the terminal, exit Postgres and return back to the lab's main directory.  Our lab already contains the SQL code in the `seed.sql` file that we need to create the table and populate it with data.  We can accomplish this with the following command:
+
+`psql dow_jones < seed.sql`
+
+Now we are all set!!
+
 ## Index Data
 
 The `dow_jones` table contains a variety of information about each company in the DJIA index.  The table include each company name, the exchange where its stock is traded, its ticker symbol, its industry, the date it was added to the index and several financial statistics like enterprise value, debt, revenue, and EBITDA.  All financial metrics are in billions of dollars.

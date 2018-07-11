@@ -5,7 +5,7 @@ def average_industry_profit_margins():
 def profit_margin_cte():
     return """WITH CTE AS
             (
-            SELECT company, (ebitda/revenue)*100 AS profit_margin FROM dow_jones WHERE ebitda IS NOT NULL
+            SELECT company, (ebitda/revenue)*100 AS profit_margin FROM dow_jones WHERE ebitda > 0
             )
             SELECT * FROM CTE ORDER BY profit_margin DESC;"""
 

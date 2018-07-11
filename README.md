@@ -56,7 +56,7 @@ The `average_industry_profit_margins` query should contain a Window Function tha
 
 #### Company Profit Margins
 
-The `profit_margin_cte` should contain a CTE that returns: 1) the company name, and 2) its respective profit margin.  Use the same formula for calculating profit margin.
+The `profit_margin_cte` should contain a CTE that returns: 1) the company name, and 2) its respective profit margin.  Use the same formula for calculating profit margin.  Do this for the companies that do not have an ebitda of `NULL`.
 
 The resulting dataset should be ordered by profit margin from highest to lowest.
 
@@ -80,11 +80,11 @@ From this CTE, the query should the symbol of the companies whose debt-to-EV rat
 
 #### Return on Investment
 
-In the final query, `tech_cos_with_above_average_roi`, we will study a company's return on investment.  The formula for ROI is as follows:
+In the final query, `pharma_cos_with_above_average_roi`, we will study a company's return on investment.  The formula for ROI is as follows:
 
 > return on investment = $100*\frac{EBITDA}{enterprise value}$
 
 
-The query should contain a CTE that looks at technology companies.  The CTE should 1) select the company's name, 2) calculate the company's ROI, and 3) calculate the tech industry's average ROI.
+The query should contain a CTE that looks at pharmaceuticals companies.  The CTE should 1) select the company's name, 2) calculate the company's ROI, and 3) calculate the pharmaceutical industry's average ROI.
 
-The overall query should return all rows from the CTE where the company's ROI is greater than the tech industry's ROI.
+The overall query should return all rows from the CTE where the company's ROI is greater than the pharma industry's ROI.

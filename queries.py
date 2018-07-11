@@ -22,7 +22,7 @@ def riskier_than_average_cos():
             QUERIES
             HERE"""
 
-def tech_cos_with_above_average_roi():
+def pharma_cos_with_above_average_roi():
     return """WRITE
             YOUR
             QUERIES

@@ -26,12 +26,12 @@ def riskier_than_average_cos():
             )
             SELECT symbol FROM CTE WHERE co_debt_to_ev > industry_debt_to_ev;"""
 
-def tech_cos_with_above_average_roi():
+def pharma_cos_with_above_average_roi():
     return """WITH CTE AS
             (
             SELECT company,
             (ebitda/enterprise_value)*100 AS company_roi,
             AVG((ebitda/enterprise_value)*100) OVER (PARTITION BY industry) AS industry_roi
-            FROM dow_jones WHERE industry = 'Technology'
+            FROM dow_jones WHERE industry = 'Pharmaceuticals'
             )
             SELECT * FROM CTE WHERE company_roi > industry_roi;"""

@@ -9,7 +9,9 @@ class TestDowJonesIndustrials(unittest.TestCase):
         cursor.execute(average_industry_profit_margins())
         raw = cursor.fetchall()
 
-        result = [('Aerospace and defense', 12.98), ('Apparel', 14.48), ('Banking', 0.0), ('Banking Financial services', 0.0), ('Beverages', 30.70), ('Broadcasting and entertainment', 30.36), ('Chemical industry', 18.60), ('Computer networking', 30.08), ('Computers and technology', 21.00), ('Conglomerate', 15.36), ('Construction and mining equipment', 18.59), ('Consumer banking', 68.44), ('Consumer electronics', 30.87), ('Consumer finance', 25.35), ('Consumer goods', 27.14), ('Fast food', 42.59), ('Home improvementretailer', 16.59), ('Insurance', 13.44), ('Managed health care', 8.40), ('Oil & gas', 15.63), ('Pharmaceuticals', 35.10), ('Retail', 6.55), ('Semiconductors', 16.41), ('Software', 35.34), ('Telecommunication', 37.46)]
+        result = [('Aerospace and defense', 12.98), ('Apparel', 14.48), ('Banking', 0.0), ('Banking Financial services', 0.0), ('Beverages', 30.70), ('Broadcasting and entertainment', 30.36), ('Chemical industry', 18.60), ('Computer networking', 30.08), ('Computers and technology', 21.00), ('Conglomerate', 15.36), ('Construction and mining equipment', 18.59),
+        ('Consumer banking', 68.44), ('Consumer electronics', 30.87), ('Consumer finance', 25.35), ('Consumer goods', 27.14), ('Fast food', 42.59), ('Home improvementretailer', 16.59), ('Insurance', 13.44), ('Managed health care', 8.40), ('Oil & gas', 15.63), ('Pharmaceuticals', 35.10), ('Retail', 6.55), ('Semiconductors', 16.41),
+        ('Software', 35.34), ('Telecommunication', 37.46)]
 
         test = []
         for el in raw:
@@ -25,7 +27,9 @@ class TestDowJonesIndustrials(unittest.TestCase):
         raw = cursor.fetchall()
 
 
-        result = [('Visa', 68.44), ("McDonalds", 42.59), ('Pfizer', 40.4), ('Verizon', 37.46), ('Microsoft', 35.34), ('Johnson & Johnson', 33.16), ('Merck', 31.73), ('Apple', 30.87), ('Coca-Cola', 30.7), ('Walt Disney', 30.36), ('Cisco Systems', 30.08), ('Procter & Gamble', 27.14), ('American Express', 25.35), ('3M', 25.09), ('IBM', 21.0), ('DowDuPont', 18.6), ('Caterpillar', 18.59), ('Chevron', 17.15), ('United Technologies', 16.78), ('The Home Depot', 16.59), ('Intel', 16.41), ('Nike', 14.48), ('ExxonMobil', 14.1), ('Travelers', 13.44), ('Boeing', 12.98), ('UnitedHealth Group', 8.4), ('Walmart', 6.55), ('General Electric', 4.23)]
+        result = [('Visa', 68.44), ("McDonalds", 42.59), ('Pfizer', 40.4), ('Verizon', 37.46), ('Microsoft', 35.34), ('Johnson & Johnson', 33.16), ('Merck', 31.73), ('Apple', 30.87), ('Coca-Cola', 30.7), ('Walt Disney', 30.36), ('Cisco Systems', 30.08),
+        ('Procter & Gamble', 27.14), ('American Express', 25.35), ('3M', 25.09), ('IBM', 21.0), ('DowDuPont', 18.6), ('Caterpillar', 18.59), ('Chevron', 17.15), ('United Technologies', 16.78), ('The Home Depot', 16.59), ('Intel', 16.41), ('Nike', 14.48), ('ExxonMobil', 14.1),
+        ('Travelers', 13.44), ('Boeing', 12.98), ('UnitedHealth Group', 8.4), ('Walmart', 6.55), ('General Electric', 4.23)]
 
         test = []
         for el in raw:
